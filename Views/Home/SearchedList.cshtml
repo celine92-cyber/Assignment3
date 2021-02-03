@@ -2,19 +2,46 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewBag.Title = "Searched Movie List";
+    ViewBag.Title = "Your Searched Movie List";
 }
 
-@model Assignment3.Models.ApplicationResponse
-
+@model IEnumerable<Assignment3.Models.ApplicationResponse>
 <div>
     <h2>Here are your movie search history: </h2>
-    <p>Category: @Model.Category</p>
-    <p>Title: @Model.Title</p>
-    <p>Year: @Model.Year</p>
-    <p>Director: @Model.Director</p>
-    <p>Rating: @Model.Rating</p>
-    <p>Edited: @Model.Edited</p>
-    <p>Lent To: @Model.LentTo</p>
-    <p>Notes: @Model.Notes</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Director</th>
+                <th>Rating</th>
+                <th>Edited</th>
+                <th>Lent To</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (Assignment3.Models.ApplicationResponse x in Model)
+            {
+                @if (@x.Title != "Independence Day")
+                {
+                    <tr>
+                        <td>@x.Category</td>
+                        <td>@x.Title</td>
+                        <td>@x.Year</td>
+                        <td>@x.Director</td>
+                        <td>@x.Rating</td>
+                        <td>@x.Edited</td>
+                        <td>@x.LentTo</td>
+                        <td>@x.Notes</td>
+                    </tr>
+                  }
+              }
+
+            </tbody>
+    </table>
 </div>
+

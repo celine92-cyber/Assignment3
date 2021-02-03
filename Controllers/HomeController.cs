@@ -37,8 +37,13 @@ namespace Assignment3.Controllers
         [HttpPost]
         public IActionResult Search(ApplicationResponse appResponse)
         {
+            SearchStorage.AddMovies(appResponse);
+            return View("Confirmation", appResponse);
+        }
 
-            return View("SearchedList", appResponse);
+        public IActionResult SearchedList()
+        {
+            return View(SearchStorage.Movies);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
