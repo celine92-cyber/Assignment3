@@ -13,14 +13,17 @@ namespace Assignment3.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private IAssignment3Repository _repository;
+
+        public HomeController(ILogger<HomeController> logger, IAssignment3Repository repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(_repository.Responses);
         }
 
         public IActionResult Podcasts()
