@@ -8,6 +8,8 @@ namespace Assignment3.Models
 {
     public class ApplicationResponse
     {
+        [Key]
+        public int BookId { get; set; }
         [Required]
         public string Category { get; set; }
 
@@ -15,7 +17,7 @@ namespace Assignment3.Models
         public string Title { get; set; }
 
         [Required]
-        public string Year { get; set; }
+        public int Year { get; set; }
 
         [Required]
         public string Director { get; set; }
