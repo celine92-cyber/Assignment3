@@ -17,7 +17,7 @@ namespace Assignment3.Migrations
 
             modelBuilder.Entity("Assignment3.Models.ApplicationResponse", b =>
                 {
-                    b.Property<int>("BookId")
+                    b.Property<int>("MovieId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -50,9 +50,9 @@ namespace Assignment3.Migrations
                     b.Property<int>("Year")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("BookId");
+                    b.HasKey("MovieId");
 
-                    b.ToTable("Responses");
+                    b.ToTable("Movies");
                 });
 #pragma warning restore 612, 618
         }

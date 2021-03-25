@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//We probably don't need it for this hw. But I just want to keep it here for reference and learning.
+
 namespace TempleScheduler.Models
 {
     public class SeedData
@@ -20,26 +22,26 @@ namespace TempleScheduler.Models
                 context.Database.Migrate();
             }
 
-            if (!context.Responses.Any())
-            {
-                context.Responses.AddRange(
-                    new ApplicationResponse
-                    {
-                        BookId = 1,
-                        Category = "Action/Adventure",
-                        Title = "Avengers, The",
-                        Year = 2012,
-                        Director = "Joss Whedon",
-                        Rating = "PG-13",
-                        Edited = false,
-                        LentTo = "",
-                        Notes = "",
+            //if (!context.Movies.Any())
+            //{
+            //    context.Movies.AddRange(
+            //        new ApplicationResponse
+            //        {
+            //            MovieId = 1,
+            //            Category = "Action/Adventure",
+            //            Title = "Avengers, The",
+            //            Year = 2012,
+            //            Director = "Joss Whedon",
+            //            Rating = "PG-13",
+            //            Edited = false,
+            //            LentTo = "",
+            //            Notes = "",
 
-                    }
-                ); 
+            //        }
+            //    ); 
 
-                context.SaveChanges();
-            }
+            //    context.SaveChanges();
+            //}
         }
     }
 }

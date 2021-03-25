@@ -7,10 +7,10 @@ namespace Assignment3.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Responses",
+                name: "Movies",
                 columns: table => new
                 {
-                    BookId = table.Column<int>(type: "INTEGER", nullable: false)
+                    MovieId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Category = table.Column<string>(type: "TEXT", nullable: false),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
@@ -23,14 +23,14 @@ namespace Assignment3.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Responses", x => x.BookId);
+                    table.PrimaryKey("PK_Movies", x => x.MovieId);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Responses");
+                name: "Movies");
         }
     }
 }

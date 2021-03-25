@@ -5,8 +5,9 @@
     ViewBag.Title = "Your Searched Movie List";
 }
 
-@*@model IQueryable<ApplicationResponse>*@
+
 @model IEnumerable<Assignment3.Models.ApplicationResponse>
+
 <div>
     <h2>Here are your movie search history: </h2>
     <table>
@@ -27,22 +28,38 @@
 
             @foreach (Assignment3.Models.ApplicationResponse x in Model)
             {
-                @if (@x.Title != "Independence Day")
+                @if (x.Title != "Independence Day")
                 {
-                    <tr>
-                        <td>@x.Category</td>
-                        <td>@x.Title</td>
-                        <td>@x.Year</td>
-                        <td>@x.Director</td>
-                        <td>@x.Rating</td>
-                        <td>@x.Edited</td>
-                        <td>@x.LentTo</td>
-                        <td>@x.Notes</td>
-                    </tr>
-                  }
-              }
+            <tr>
+                <td>@x.Category</td>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.Notes</td>
 
-            </tbody>
+                @*Edit Movies matching edit and movieId research*@
+                <td>
+                    <form id="@x.MovieId" asp-action="EditForm" method="post">
+                        <input type="hidden" asp-for="@x.MovieId" name="editId" />
+                        <button type="submit" class="btn-sm btn-info">Edit</button>
+                    </form>
+                </td>
+
+                @*Delete Existing Movies using deleteid research*@
+                <td>
+                    <form id="@x.MovieId" asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="@x.MovieId" name="deletionId" />
+                        <button type="submit" class="btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+                }
+            }
+
+        </tbody>
     </table>
 </div>
 

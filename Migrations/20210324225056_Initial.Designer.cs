@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment3.Migrations
 {
     [DbContext(typeof(Assignment3DbContext))]
-    [Migration("20210324082700_Initial")]
+    [Migration("20210324225056_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,7 +19,7 @@ namespace Assignment3.Migrations
 
             modelBuilder.Entity("Assignment3.Models.ApplicationResponse", b =>
                 {
-                    b.Property<int>("BookId")
+                    b.Property<int>("MovieId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -52,9 +52,9 @@ namespace Assignment3.Migrations
                     b.Property<int>("Year")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("BookId");
+                    b.HasKey("MovieId");
 
-                    b.ToTable("Responses");
+                    b.ToTable("Movies");
                 });
 #pragma warning restore 612, 618
         }

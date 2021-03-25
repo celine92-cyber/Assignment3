@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Assignment3.Models
 
         }
 
-        public DbSet<ApplicationResponse> Responses { get; set; }
+        public DbSet<ApplicationResponse> Movies { get; set; }
 
     }
 }

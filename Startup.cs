@@ -35,7 +35,7 @@ namespace Assignment3
                 options.UseSqlite(Configuration["ConnectionStrings:Assignment3Connection"]);
            });
 
-            services.AddScoped<IAssignment3Repository, EFAssignment3Repository>();
+            //services.AddScoped<IAssignment3Repository, EFAssignment3Repository>();
             services.AddRazorPages();
 
             services.AddDistributedMemoryCache();

@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Assignment3.Models
 {
-    public static class SearchStorage
+    public class SearchStorage
     {
-        private static List<ApplicationResponse> movies = new List<ApplicationResponse>();
+        private static List<ApplicationResponse> applications = new List<ApplicationResponse>();
 
-        public static IEnumerable<ApplicationResponse> Movies => movies;
+        public static IEnumerable<ApplicationResponse> Applications => applications;
 
-        public static void AddMovies(ApplicationResponse movie)
+        public static void AddApplication(ApplicationResponse application)
         {
-            if (movie.Title != "Independence Day")
-            {
-             movies.Add(movie);
-            }
-            
+            applications.Add(application);
         }
     }
 }

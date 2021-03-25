@@ -2,30 +2,32 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewBag.Title = "Search A Movie";
+    ViewBag.Title = "Edit A Movie";
 }
 
 @model Assignment3.Models.ApplicationResponse
 
-<form asp-action="Search" method="post">
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="MovieId" value="@ViewBag.movieToEdit.MovieId" />
     <div>
         <label asp-for="Category">Category</label>
-        <input asp-for="Category" required/>
+        <input asp-for="Category"  value="@ViewBag.movieToEdit.Category" required />
     </div>
 
     <div>
         <label asp-for="Title">Title</label>
-        <input asp-for="Title" required />
+        <input asp-for="Title"  value="@ViewBag.movieToEdit.Title"  required />
     </div>
 
     <div>
         <label asp-for="Year">Year</label>
-        <input asp-for="Year" required/>
+        <input asp-for="Year"  value="@ViewBag.movieToEdit.Year" required />
     </div>
 
     <div>
         <label asp-for="Director">Director</label>
-        <input asp-for="Director" required />
+        <input asp-for="Director"  value="@ViewBag.movieToEdit.Director" required />
     </div>
 
     <div>
@@ -36,23 +38,24 @@
             <option value="PG">PG</option>
             <option value="PG-13">PG-13</option>
             <option value="R">R</option>
+            <option value="Others">Others</option>
         </select>
     </div>
 
     <div>
         <label asp-for="Edited">Edited</label>
-        <input asp-for="Edited" type="checkbox"/>
+        <input asp-for="Edited" value="@ViewBag.movieToEdit.Edited" type="checkbox" />
 
     </div>
 
     <div>
         <label asp-for="LentTo">Lent To:</label>
-        <input asp-for="LentTo" />
+        <input asp-for="LentTo" value="@ViewBag.movieToEdit.LentTo" />
     </div>
 
     <div>
         <label asp-for="Notes">Notes</label>
-        <input asp-for="Notes" type="text" maxlength="25"/>
+        <input asp-for="Notes" type="text" maxlength="25" />
     </div>
 
     <button type="submit">Submit Your Movie Search</button>
