@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-//We probably don't need it for this hw. But I just want to keep it here for reference and learning.
+//We don't need it for this hw. But I just want to keep it here for reference and learning.
 
 namespace TempleScheduler.Models
 {
