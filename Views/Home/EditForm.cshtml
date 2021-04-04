@@ -33,18 +33,21 @@
     <div>
         <label asp-for="Rating">Rating</label>
         <select asp-for="Rating" required>
-            <option value="">Choose One</option>
-            <option value="G">G</option>
-            <option value="PG">PG</option>
-            <option value="PG-13">PG-13</option>
-            <option value="R">R</option>
-            <option value="Others">Others</option>
+            <!option @if (ViewBag.movieToEdit.Rating == "ALL") { <text> selected="selected" </text> } value="">ALL</!option>
+            <!option @if (ViewBag.movieToEdit.Rating == "G") { <text> selected="selected" </text> } value="G">G</!option>
+            <!option @if (ViewBag.movieToEdit.Rating == "PG") { <text> selected="selected" </text> } value="PG">PG</!option>
+            <!option @if (ViewBag.movieToEdit.Rating == "PG-13") { <text> selected="selected" </text> } value="PG-13">PG-13</!option>
+            <!option @if (ViewBag.movieToEdit.Rating == "R") { <text> selected="selected" </text> } value="R">R</!option>
         </select>
     </div>
 
     <div>
         <label asp-for="Edited">Edited</label>
-        <input asp-for="Edited" value="@ViewBag.movieToEdit.Edited" type="checkbox" />
+        <select asp-for="Edited">
+            <!option value="false">Select an option</!option>
+            <!option @if (ViewBag.movieToEdit.Edited == false) { <text> selected="selected" </text> } value="false">No</!option>
+            <!option @if (ViewBag.movieToEdit.Edited == true) { <text> selected="selected" </text> } value="true">Yes</!option>
+        </select>
 
     </div>
 
@@ -55,7 +58,7 @@
 
     <div>
         <label asp-for="Notes">Notes</label>
-        <input asp-for="Notes" type="text" maxlength="25" />
+        <input asp-for="Notes" type="text" maxlength="25" value="@ViewBag.movieToEdit.Notes" />
     </div>
 
     <button type="submit">Submit Your Movie Search</button>

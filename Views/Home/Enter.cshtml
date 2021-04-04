@@ -41,9 +41,12 @@
     </div>
 
     <div>
-        <label asp-for="Edited">Edited</label>
-        <input asp-for="Edited" type="checkbox"/>
-
+        <label asp-for="Edited">Edited:</label>
+        <select asp-for="Edited">
+            <option value="">Select One</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
     </div>
 
     <div>
